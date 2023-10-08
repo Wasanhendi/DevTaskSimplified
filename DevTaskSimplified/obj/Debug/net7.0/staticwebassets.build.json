@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "Hash": "C2Hhav3c2AZu3mLgVQJXvWOKU/qx6TYVuFpSyDGAISU=",
+  "Source": "DevTaskSimplified",
+  "BasePath": "_content/DevTaskSimplified",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "DevTaskSimplified\\wwwroot",
+      "Source": "DevTaskSimplified",
+      "ContentRoot": "C:\\Users\\user\\source\\repos\\DevTaskSimplified\\DevTaskSimplified\\wwwroot\\",
+      "BasePath": "_content/DevTaskSimplified",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\user\\source\\repos\\DevTaskSimplified\\DevTaskSimplified\\wwwroot\\CarMake.csv",
+      "SourceId": "DevTaskSimplified",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\user\\source\\repos\\DevTaskSimplified\\DevTaskSimplified\\wwwroot\\",
+      "BasePath": "_content/DevTaskSimplified",
+      "RelativePath": "CarMake.csv",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\CarMake.csv"
+    }
+  ]
+}

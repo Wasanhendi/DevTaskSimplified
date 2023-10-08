@@ -1,0 +1,25 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevTaskSimplified\\DevTaskSimplified\\wwwroot\\CarMake.csv",
+      "PackagePath": "staticwebassets\\CarMake.csv"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.DevTaskSimplified.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.DevTaskSimplified.props",
+      "PackagePath": "build\\DevTaskSimplified.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.DevTaskSimplified.props",
+      "PackagePath": "buildMultiTargeting\\DevTaskSimplified.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.DevTaskSimplified.props",
+      "PackagePath": "buildTransitive\\DevTaskSimplified.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
