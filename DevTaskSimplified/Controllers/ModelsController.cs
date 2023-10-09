@@ -54,7 +54,7 @@ public class ModelsController : ControllerBase
         CsvContext csvContext = new CsvContext();
         string? volume = csvContext.Read<MakeCsvMapper>(Path.Combine(_HostEnvironment.WebRootPath, "CarMake.csv"))
                 .Where(i => i.make_name.ToLower().Contains(make))
-                .Select(i => i.make_name)
+                .Select(i => i.make_id)
                 .FirstOrDefault();
 
         return volume == null ? null : int.Parse(volume);
