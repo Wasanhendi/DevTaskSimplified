@@ -24,11 +24,15 @@ public class ModelsController : ControllerBase
     public async Task<IEnumerable<string>> GetAsync([FromQuery] int modelYear, [FromQuery] string make)
     {
         IEnumerable<string> models = Enumerable.Empty<string>();
-        string baseUrl = _configuration.GetValue<string>("BaseUrl");
-        string path = $"{baseUrl}{getModelsUri}{make}/modelyear/{modelYear}?format=json";
+        string baseUrl = _configuration.GetValue<string>("BaseUrl") ?? string.Empty;
 
-        models = await GetModelsAsync(models, path);
-        B();
+        int? makeId = GetMakeId(make.ToLower());
+        if (makeId.HasValue)
+        {
+            string path = $"{baseUrl}{getModelsUri}{makeId}/modelyear/{modelYear}?format=json";
+            models = await GetModelsAsync(models, path);
+        }
+
         return models;
     }
 
@@ -45,22 +49,14 @@ public class ModelsController : ControllerBase
         return models;
     }
 
-    private void B()
+    private int? GetMakeId(string make)
     {
         CsvContext csvContext = new CsvContext();
-        var volume = csvContext.Read<IdVolumeNameRow>(Path.Combine(_HostEnvironment.WebRootPath, "CarMake.csv"))
-                .Where(i => i.make_id == "464")
+        string? volume = csvContext.Read<MakeCsvMapper>(Path.Combine(_HostEnvironment.WebRootPath, "CarMake.csv"))
+                .Where(i => i.make_name.ToLower().Contains(make))
                 .Select(i => i.make_name)
                 .FirstOrDefault();
+
+        return volume == null ? null : int.Parse(volume);
     }
-
-
-}
-public class IdVolumeNameRow
-{
-    [CsvColumn(FieldIndex = 1)]
-    public string make_id { get; set; }
-
-    [CsvColumn(FieldIndex = 2)]
-    public string make_name { get; set; }
 }
